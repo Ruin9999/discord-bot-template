@@ -12,6 +12,8 @@ make discord bots with. 🤖
 
 #### Creating a command
 
+**Commands** should be created in the ./src/***commands*** folder.
+
 ```javascript
 import ICommand from "../interfaces/ICommand";
 
@@ -25,6 +27,8 @@ export default command;
 ```
 
 #### Creating an event
+
+**Events** should be created in the ./src/***events*** folder.
 
 ```javascript
 import IEvent from "../interfaces/IEvent";
