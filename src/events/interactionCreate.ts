@@ -30,8 +30,13 @@ const event : IEvent = {
 
         //Run command
         let reply = await command.callback(interaction);
-        if(reply) interaction.editReply(reply);
-
+        if(reply) {
+            if(command.ephemeral) {
+                interaction.editReply(reply, { ephemeral: true });
+            } else {
+                interaction.editReply(reply);
+            }
+        }
     }
 }
 

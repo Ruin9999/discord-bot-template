@@ -23,7 +23,13 @@ const event : IEvent = {
         if(!message.guild.me.permissions.has(command.botPermissions)) return message.channel.send("I do not have enough permissions for that!");
 
         let reply = await command.run(message);
-        if(reply) message.channel.send(reply);
+        if(reply) {
+            if(command.ephemeral) {
+                message.channel.send(reply, { ephemeral: true });
+            } else {
+                message.channel.send(reply);
+            }
+        }
     }
 }
 

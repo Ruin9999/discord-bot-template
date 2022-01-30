@@ -1,4 +1,4 @@
-import { Interaction, Message } from "discord.js";
+import { CommandInteraction, Message } from "discord.js";
 import ICommand from "../interfaces/ICommand";
 
 const command : ICommand = {
@@ -13,8 +13,8 @@ const command : ICommand = {
     run(message : Message) {
         console.log("test");
     },
-    callback(interaction: Interaction) {
-
+    callback(interaction: CommandInteraction) {
+        
     }
 }
 

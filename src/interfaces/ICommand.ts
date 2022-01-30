@@ -1,4 +1,12 @@
-import { ApplicationCommandOptionData } from "discord.js";
+import { ApplicationCommandOptionData, Message, CommandInteraction } from "discord.js";
+
+interface IRun {
+    (message: Message) : Object | void | string
+}
+
+interface ICallback {
+    (interaction: CommandInteraction) : Object | void | string
+}
 
 export default interface ICommand {
     name : string;
@@ -10,6 +18,6 @@ export default interface ICommand {
     isSlash : boolean;
     userPermissions : string[];
     botPermissions : string[];
-    run: Function;
+    run: IRun;
     callback: Function;
 } 
